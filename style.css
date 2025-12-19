@@ -1,0 +1,36 @@
+*, div, html {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: gray;
+    padding: 1rem;
+}
+
+.content {
+    width: calc(100dvh - 1rem);
+    height: 90dvw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    background-color: aqua;
+    transform: rotate(90deg);
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+.flavors {
+    text-transform: uppercase;
+    padding: 0px;
+    list-style: none;
+    font-size: 30px;
+}
