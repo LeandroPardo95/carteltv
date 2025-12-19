@@ -1,40 +1,47 @@
 *, div, html {
     box-sizing: border-box;
 }
-body {
+body, html {
     margin: 0;
+    padding: 0;
+    width: 100vw;
     height: 100dvh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    overflow: hidden;
 }
 
 .content {
-    width: calc(100dvh - 1rem);
-    padding: 50px 0;
-    /* height: 90dvw; */
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    transform: rotate(90deg);
-    position: relative; /* Necesario para ubicar los bordes */
-    overflow: hidden;    /* Para que la imagen no se salga al moverse */
+    /* TRUCO PARA AJUSTE 100%: 
+       Invertimos dimensiones porque al rotar 90deg, 
+       el ancho de la TV pasa a ser el alto de tu diseño. */
+    width: 100vh; 
+    height: 100vw;
+    
+    /* Centrado y rotación */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Crea 4 columnas de 1 parte cada una */
+    gap: .5rem; /* Espacio entre columnas */
+
+    box-sizing: border-box; /* Importante para que el borde no sume tamaño */
 }
 
 /* Configuración general de los bordes */
-.content::before,
+/* .content::before,
 .content::after {
     content: "";
     position: absolute;
     left: 0;
     width: 100%;
-    height: 100px; /* Ajusta el grosor de tu borde aquí */
+    height: 100px;
     background-image: url('borde.png');
     background-repeat: repeat-x;
     background-size: contain;
     animation: moverBorde 30s linear infinite;
-}
+} */
 
 /* Borde Superior */
 .content::before {
@@ -57,18 +64,25 @@ body {
     }
 }
 
+.column {
+    width: 100%;
+    height: 100%;
+    /* background: rgba(209, 133, 133, 0.959); */
+    overflow: hidden;
+    padding: 1rem;
+}
 
 .title {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .flavors {
     text-transform: uppercase;
     padding: 0px;
     list-style: none;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .red {
