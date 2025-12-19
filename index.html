@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="btnFullscreen" class="btn-fs">⛶ Pantalla Completa</button>
     <div class="content">
         <div class="column">
             <div class="title red">
@@ -96,5 +97,34 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        const btn = document.getElementById('btnFullscreen');
+
+btn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        // Entrar en pantalla completa
+        document.documentElement.requestFullscreen().catch(err => {
+            alert(`Error al intentar modo pantalla completa: ${err.message}`);
+        });
+        btn.textContent = "✕ Salir";
+    } else {
+        // Salir de pantalla completa
+        document.exitFullscreen();
+        btn.textContent = "⛶ Pantalla Completa";
+    }
+});
+
+// Ocultar botón automáticamente después de 3 segundos para que no moleste en la TV
+let timeout;
+document.addEventListener('mousemove', () => {
+    btn.style.opacity = '1';
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        btn.style.opacity = '0'; // Se vuelve invisible
+    }, 3000);
+});
+    </script>
+
 </body>
 </html>

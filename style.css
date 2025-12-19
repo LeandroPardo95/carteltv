@@ -94,3 +94,22 @@ body, html {
 .dark {
     color: #252525;
 }
+
+
+.btn-fs {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: sans-serif;
+}
+
+.btn-fs:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
