@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 *, div, html {
     box-sizing: border-box;
 }
@@ -74,8 +76,11 @@ body, html {
 
 .title {
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 500;
     font-size: 20px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .flavors {
@@ -83,6 +88,9 @@ body, html {
     padding: 0px;
     list-style: none;
     font-size: 12px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .red {
@@ -93,6 +101,9 @@ body, html {
 }
 .dark {
     color: #252525;
+}
+.blue {
+    color: rgb(101, 101, 199);
 }
 
 
