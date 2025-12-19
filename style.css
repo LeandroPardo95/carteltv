@@ -72,6 +72,7 @@ body, html {
     /* background: rgba(209, 133, 133, 0.959); */
     overflow: hidden;
     padding: 2px;
+    transform: scaleX(0.9); /* achata verticalmente */
 }
 
 .title {
